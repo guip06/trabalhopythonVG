@@ -1,0 +1,26 @@
+tabela = {"Tomate" : 7.99,
+        "Batata" : 5.99,
+        "Cebola" : 9.99,
+        "Alho" : 12.99,
+        "Costela" : 25.99,
+        "presunto" : 15.99,
+        "Mussarela" : 17.99}
+valor_total = 0
+  
+while True:
+      alimento = input("Qual o alimento? ")
+
+      if alimento == 'sair' :
+        print('Tchau!')
+        break
+      
+      quilos = float(input('Quilos: '))
+      valor_alimento = tabela.get(alimento) * quilos
+
+      if valor_alimento > 50.00 :
+          desconto = valor_alimento * 0.15
+          valor_alimento -= desconto
+          print("Parabéns! Ao gastar mais de 50 reais, você recebeu um desconto de 15%.")
+
+      if valor_alimento < 50.00 :
+         print(f"Sua compra deu R${valor_alimento:.2f}")
